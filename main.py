@@ -158,7 +158,8 @@ async def handle_account(message):
 async def handle_users(message):
 	await bot.delete_message(message.chat.id, message.message_id)
 	if message.from_user.id == 17508705:
-		await bot.send_message(message.from_user.id, text=get_db_all_users())
+		users = await get_db_all_users()
+		await bot.send_message(message.from_user.id, text=users)
 
 
 @bot.message_handler()
