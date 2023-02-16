@@ -1,0 +1,17 @@
+/.env
+/overseerr.py
+/users.json
+/stripe.cmd
+/stripe.exe
+/test_main.http
+/.idea/
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/Plex.iml
+/.idea/vcs.xml
+/db.sqlite3
