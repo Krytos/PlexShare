@@ -61,9 +61,6 @@ async def get_db_all_users() -> list:
 	return "\n".join([User(**u).email for u in db.users.find({}, {'_id': False})])
 
 
-print(asyncio.run(get_db_user("r.wolf@outlook.de")))
-
-
 # @bot.message_handler(commands=["start"])
 # async def search_stripe_user(message):
 # 	telegram_id = message.from_user.id
