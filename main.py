@@ -21,7 +21,7 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(lineno
 handler = logging.StreamHandler()
 handler.setFormatter(formatter)
 logging.getLogger("uvicorn").addHandler(handler)
-logging.getLogger("uvicorn").setLevel(logging.INFO)
+logging.getLogger("uvicorn").setLevel(logging.DEBUG)
 logger = logging.getLogger("uvicorn")
 
 # locale.setlocale(locale.LC_MONETARY, 'de_DE')
@@ -58,7 +58,10 @@ async def get_db_user(email: str) -> dataclass:
 
 
 async def get_db_all_users() -> list:
-	return "\n".join([User(**u) for u in db.users.find({}, {'_id': False})])
+	return "\n".join([User(**u).email for u in db.users.find({}, {'_id': False})])
+
+
+print(asyncio.run(get_db_user("r.wolf@outlook.de")))
 
 
 # @bot.message_handler(commands=["start"])
